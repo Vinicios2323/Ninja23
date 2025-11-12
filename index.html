@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Presente minha Ninja</title>
+   
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Cormorant Garamond para o título e Roboto para o resto */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Estilos de fundo dark e roxo com efeito de névoa/sombra (Paleta Naruto) */
+        body {
+            background-color: #1a001a; /* Roxo escuro quase preto */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(77, 0, 77, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 85% 50%, rgba(77, 0, 77, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(46, 0, 46, 0.6) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(26, 0, 26, 0.8), #1a001a);
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            color: #e0b0ff; /* Texto roxo claro */
+            position: relative;
+        }
+
+        /* Efeito de névoa sutil */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Estilos para o contêiner principal */
+        #content-container {
+            position: relative;
+            z-index: 1; /* Acima da névoa */
+            background-color: rgba(30, 0, 30, 0.85); /* Fundo roxo escuro semi-transparente */
+            border: 2px solid #5d005d; /* Borda roxa escura */
+            box-shadow: 0 0 40px rgba(128, 0, 128, 0.7); /* Sombra roxa brilhante */
+            animation: pulse-shadow 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 40px rgba(128, 0, 128, 0.7); }
+            50% { box-shadow: 0 0 60px rgba(255, 0, 255, 0.9); }
+            100% { box-shadow: 0 0 40px rgba(128, 0, 128, 0.7); }
+        }
+
+        /* Estilo para a contagem regressiva */
+        .countdown-segment {
+            background-color: rgba(60, 0, 60, 0.7); /* Fundo dos segmentos mais escuro */
+            border: 1px solid #7d007d;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 15px rgba(128, 0, 128, 0.4);
+        }
+        .countdown-segment:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: rgba(90, 0, 90, 0.9);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+        }
+
+        /* NOVO ESTILO: Título com fonte Cormorant Garamond (Mais Elegante e Laranja) */
+        .elegant-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700; /* Negrito */
+            text-shadow: 0 0 15px #ff8c00, 0 0 5px rgba(0,0,0,0.8); /* Brilho Laranja/Naruto */
+            color: #ffb84d; /* Laranja claro */
+            letter-spacing: 0.2rem;
+        }
+        
+        /* Caixa para a poesia (mantendo a vibe roxa) */
+        .poetry-box {
+             box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
+        }
+
+        /* NOVO: Estilo para a caixa de cantadas (Toque Laranja/Naruto) */
+        #flirty-box {
+            border-color: #ff4500; /* Laranja/Vermelho Intenso */
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.7);
+        }
+        #flirty-box .naruto-emoji { /* Estilo para os emojis de Naruto nas cantadas */
+            font-size: 1.8rem;
+            color: #ff4500; /* Laranja Intenso */
+            vertical-align: middle;
+        }
+
+        /* Estilo para a foto de vocês */
+        .couple-photo {
+            border: 3px solid #ff4500; /* Borda Laranja/Vermelha */
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.6); /* Sombra Laranja/Vermelha */
+            margin-bottom: 2rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content-container" class="w-full max-w-4xl p-6 sm:p-10 rounded-3xl shadow-2xl text-center transition-opacity duration-1000">
+        
+        <!-- Título principal -->
+        <h1 class="elegant-title text-5xl sm:text-7xl mb-4 tracking-wider">
+            O NOSSO CAMINHO NINJA!
+        </h1>
+        <p class="text-xl sm:text-2xl text-purple-300 mb-6 font-light italic">
+            Pra sempre teu Hokage!
+         
+        </p>
+
+        <!-- Foto do Casal -->
+        <div class="mb-8">
+            <!-- SUBSTITUA ESTE LINK com o link direto da sua foto (ex: link que termina em .jpg ou .png) -->
+            <img src="sss.jpg" onerror="this.onerror=null; this.src='https://placehold.co/256x256/300030/ffb84d?text=FOTO+DO+CASAL';" alt="Nós dois, meu amor." class="couple-photo w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover mx-auto">
+        </div>
+
+        <!-- Nova Poesia / Letra (Mantida conforme pedido) -->
+        <div class="poetry-box bg-purple-900 bg-opacity-30 p-6 sm:p-8 rounded-xl border border-dashed border-purple-600 mb-8 shadow-xl">
+            <p class="text-lg sm:text-xl font-light italic text-purple-200 leading-relaxed whitespace-pre-line">
+Cê é malvada e tem
+Mó cara de quem...
+Curte uma arte proibida
+Não tenho dúvidas que você é o amor da minha vida.
+Dance no baile
+Me ame ou me mate
+Faz o que quiser de mim e ela sabe
+Porra, uma mulher tão foda assim é maldade
+Como Obito
+Eu queria te dar
+Meu olho
+Pra você ver
+Como eu te vejo
+Não há segredos
+Nem há mais medo
+Selando o nosso amor com um beijo
+Nóiz é maduro, mas também ri de piada besta
+Aí, gatinha, o que cê vai fazer sexta?
+Cola comigo, 'vamo' pra igreja?
+            </p>
+        </div>
+        
+        <!-- Contador Regressivo -->
+        <div id="countdown-timer" class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8">
+            <!-- Segmentos da contagem regressiva serão preenchidos pelo JavaScript -->
+        </div>
+
+        <!-- Cantadas Temáticas (Jutsus Secretos) -->
+        <div id="flirty-box" class="bg-gray-900 bg-opacity-70 p-6 rounded-2xl border-2 shadow-2xl shadow-orange-900/50">
+            <h2 class="text-3xl font-bold mb-4 text-orange-400 elegant-title tracking-widest">
+                NOSSOS JUTSUS SECRETOS <span class="naruto-emoji" role="img" aria-label="Raposa de nove caudas (Kyuubi)">🦊</span>
+            </h2>
+            <div class="text-left space-y-4">
+                <p class="text-purple-300 text-lg sm:text-xl font-medium">
+                    <span class="naruto-emoji mr-2">🌀</span> Rasengan
+                    <br> você faz minha cabeça girar, tira o meu ar... Como ninguém, tipo um Fuuton: Rasenshuriken!
+                </p>
+                <div class="w-full h-px bg-orange-900/50"></div>
+                <p class="text-purple-300 text-lg sm:text-xl font-medium">
+                    <span class="naruto-emoji mr-2">👥</span> Tajuu Kage Bunshin no Jutsu
+                    <br>Eu não preciso de Clones das Sombras. Só de você, de novo e de novo, mulher...
+                </p>
+                <div class="w-full h-px bg-orange-900/50"></div>
+                <p class="text-purple-300 text-lg sm:text-xl font-medium">
+                    <span class="naruto-emoji mr-2">👑</span> Seu Hokage
+                    <br> É muita areia pro meu caminhãozinho? Duas viagens e tá resolvido..
+                </p>
+            </div>
+            <p class="mt-6 text-orange-300 font-semibold text-right">
+                — Seu Hokage!
+            </p>
+        </div>
+        
+
+<p class="mt-8 text-sm text-gray-600">
+            A promessa de um beijo, selada no Tsukuyomi Infinito.
+        </p>
+    </div>
+
+    <script>
+        // 1. Definição da Data Alvo (20 de Novembro de 2025, 00:00:00)
+        const targetDate = new Date("November 20, 2025 00:00:00").getTime();
+        const countdownTimer = document.getElementById('countdown-timer');
+        const contentContainer = document.getElementById('content-container');
+
+        // Função principal do contador
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Se a contagem já terminou
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownTimer.innerHTML = `
+                    <div class="text-3xl sm:text-5xl font-bold text-orange-500 text-shadow-lg">
+                        <span class="naruto-emoji" role="img" aria-label="Raposa de nove caudas (Kyuubi)">🦊</span> FINALMENTE, SOU HOKAGE! <span class="naruto-emoji" role="img" aria-label="Raposa de nove caudas (Kyuubi)">🦊</span>
+                    </div>
+                `;
+                return;
+            }
+
+            // Cálculo do tempo em dias, horas, minutos e segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Geração do HTML para os segmentos da contagem
+            const segments = [
+                { value: days, label: 'Noites' }, 
+                { value: hours, label: 'Horas' },
+                { value: minutes, label: 'Sussurros' }, 
+                { value: seconds, label: 'Kurama' } /* Novo nome temático */
+            ];
+
+            countdownTimer.innerHTML = segments.map(segment => `
+                <div class="countdown-segment flex flex-col items-center p-4 sm:p-6 rounded-xl w-28 sm:w-36">
+                    <span class="text-3xl sm:text-5xl font-extrabold text-orange-400">${String(segment.value).padStart(2, '0')}</span>
+                    <span class="text-xs sm:text-sm font-semibold mt-1 text-purple-400 uppercase">${segment.label}</span>
+                </div>
+            `).join('');
+        }
+
+        // Chama a função imediatamente para evitar o "flicker" de 00:00:00
+        updateCountdown();
+
+        // Atualiza o contador a cada 1 segundo (1000 milissegundos)
+        const interval = setInterval(updateCountdown, 1000);
+
+        // Adiciona um efeito de carregamento suave
+        window.onload = () => {
+             contentContainer.classList.add('opacity-100');
+             contentContainer.classList.remove('opacity-0');
+        };
+
+        // Estilo inicial para a animação de carregamento
+        contentContainer.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
+    </script>
+</body>
+</html>
